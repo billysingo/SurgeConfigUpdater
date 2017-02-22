@@ -61,8 +61,6 @@ def read_list(path):
             for line in f:
                 if len(line.strip()) > 0 :
                     list.append(line.strip())
-    except FileNotFoundError:
-        log_append('Can\'t find ' + path)
     except FileExistsError:
         log_append('Can\'t find: ' + path)
     return list
@@ -72,9 +70,6 @@ def read_header(path):
         with open(path, 'r', encoding='utf-8') as f:
             str_header = f.read()
             return str_header, True
-    except FileNotFoundError:
-        log_append('Can\'t find ' + path)
-        return '', False
     except FileExistsError:
         log_append('Can\'t find: ' + path)
         return '', False
