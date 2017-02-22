@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 import sys, getopt, os
 import requests
-import configparser
 
 
 def update_config(config_url, mitm=False, path=''):
