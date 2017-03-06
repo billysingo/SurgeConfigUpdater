@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3.5
 # -*- coding: utf-8 -*-
 import sys, getopt, os
 import requests
@@ -27,7 +27,6 @@ def update_config(config_url, mitm=False, path=''):
             log_append("Adding: " + line2)
     except ValueError:
         log_append('Not a legal config file for Surge..')
-        exit(0)
     log_append('Refining header...')
     new_conf += '\n'.join(list_raw_conf)
     mitm_name = ''
@@ -77,7 +76,7 @@ def read_header(path):
 
 
 def log_append(str):
-    print(str)
+    print(str.encode('utf-8'))
 
 
 def get_raw_list(url,cut_header=True):
